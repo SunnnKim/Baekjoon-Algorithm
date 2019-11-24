@@ -1,5 +1,7 @@
 package level.string;
 
+import java.util.Scanner;
+
 public class Q1157 {
 
 	public static void main(String[] args) {
@@ -32,9 +34,29 @@ public class Q1157 {
 	z
 	예제 출력 3 
 	Z
-	 
-	 
  */
+		Scanner sc = new Scanner(System.in);
+		String inputStr = sc.next().toUpperCase();
+		int check[] = new int[26];
+		
+		for (int i = 0; i < check.length; i++) {
+			check[i] = 0;
+		}
+		for (int i = 0; i < inputStr.length() ; i++) {
+			int n = inputStr.charAt(i)-60;
+			check[n]++;
+		}
+		int w=0;
+		String p="";
+		int max = check[0];
+		for (int i = 1; i < check.length; i++) {
+			if(max < check[i]) {
+				max = check[i];
+			}
+		}
+		if(w>1)	System.out.println("?");
+		else System.out.println(""+(char)(max+60));
+		
 		
 		
 		
