@@ -8,6 +8,7 @@ public class Q1157 {
 /*
  
 	문제
+
 	알파벳 대소문자로 된 단어가 주어지면, 
 	이 단어에서 가장 많이 사용된 알파벳이 무엇인지 알아내는 프로그램을 작성하시오.
 	단, 대문자와 소문자를 구분하지 않는다.
@@ -38,24 +39,30 @@ public class Q1157 {
 		Scanner sc = new Scanner(System.in);
 		String inputStr = sc.next().toUpperCase();
 		int check[] = new int[26];
-		
+		// 횟수 찾기 : 처음엔 모두 0
 		for (int i = 0; i < check.length; i++) {
 			check[i] = 0;
 		}
+		
+		// 문자열 찾기 
 		for (int i = 0; i < inputStr.length() ; i++) {
-			int n = inputStr.charAt(i)-60;
-			check[n]++;
+			int n = inputStr.charAt(i);
+			check[n-65]++;
 		}
-		int w=0;
-		String p="";
+		int maxIndex=0;
 		int max = check[0];
 		for (int i = 1; i < check.length; i++) {
 			if(max < check[i]) {
 				max = check[i];
+				maxIndex = i;
 			}
 		}
-		if(w>1)	System.out.println("?");
-		else System.out.println(""+(char)(max+60));
+		int w=0;
+		for (int i = 0; i < check.length; i++) {
+			if(max == check[i]) w++;
+		}
+		if(w>1) System.out.println("?");
+		else System.out.println(""+(char)(maxIndex+65));
 		
 		
 		
