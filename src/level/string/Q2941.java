@@ -42,70 +42,25 @@ public class Q2941 {
 	
 	예제 출력 1 
 	6
-				
-		 */
-		//c= c- dz= d- lj nj s= z=
+	
+	
+	*/
+		
 	Scanner sc = new Scanner(System.in);
-	String ip = sc.next();
-	int charNum=0;
-	String str[] = { "c=", "c-", "dz=", "d-", 
-					 "lj", "nj", "s=", "z=" };
-	for (int i = 0; i < ip.length(); i++) {
-		char c = ip.charAt(i);
-		int w=0;
-		for (int j = 0; j < str.length; j++) {
-			if(c == str[j].charAt(w)) {
-				
-			}
-				
-		}
-
-		
-		
+	String std = sc.nextLine().trim().toLowerCase();
+	
+	String [] excChar = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
+	for(String s : excChar) {
+		std = std.replaceAll(s, "a");
 	}
-		System.out.println(charNum);
+	
+	System.out.println(std.length());
+	
+	
+		
+		
 	
 	
 	
 	}
-	
 }
-
-	
-	/*
-	 	//첫번째 문자부터 마지막 문자-1까지 
-	for (int i = 0; i < ip.length(); i++) {
-		char c = ip.charAt(i);
-		if(i<ip.length()-1) {
-			if(c =='c' ) {
-				c = ip.charAt(i+1);
-				if(c == '=' || c == '-') i++;
-			}else if(c == 'd' ) {
-				
-				c = ip.charAt(i+1);
-				if( c == '-') i++;
-				else if( c == 'z') {
-					c = ip.charAt(i+2);
-					if(c == '=') i+=2;
-				}
-			
-			}else if(c == 'l' ) {
-				c = ip.charAt(i+1);
-				if(c == 'j') i++;
-			}else if(c == 'n' ) {
-				c = ip.charAt(i+1);
-				if(c == 'j') i++;
-			}else if(c == 's' ) {
-				c = ip.charAt(i+1);
-				if(c == '=') i++;
-			}else if(c == 'z' ) {
-				c = ip.charAt(i+1);
-				if(c == '=') i++;
-			}
-			}
-			charNum++;
-	 
-	 */
-		
-		
-	
