@@ -1,5 +1,7 @@
 package level.mathematics;
 
+import java.util.Scanner;
+
 public class Q1193 {
 
 	public static void main(String[] args) {
@@ -31,21 +33,46 @@ public class Q1193 {
 		예제 출력 1 
 		2/4
 		 */
-		int num; //input
-		int count=0;
+// up : 1 / 1 2 / 3 2 1 / 1 2 3 4 / 5 4 3 2 1 / 1 2 3 4 5 6 / 7 6 5 4 3 2 1 / 1 2  
+// dw : 1 / 2 1 / 1 2 3 / 4 3 2 1 / 1 2 3 4 5 / ....
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt(); // 몇번 째 인지  
+		int count = 1;
 		int upNum = 1;
 		int downNum = 1;
-		int plusNum=1;
-		//1- -3- -5-
-		// -2- -4- -6
-		while(true) {
-			count += plusNum;
+		int turn =1;
+		while(count != num) {
+		// 1 번째는 반드시 1/1
+		if(turn != 1 ) {
+			if( turn %2 == 0) {
+				upNum = 1;
+				downNum = turn;
+				count++;
+				for (int i = 1; i < turn && count < num; i++) {
+					upNum++;
+					downNum--;
+					count++;
+				}
+			}else { // 홀수 턴일 때  
+				upNum = turn;
+				downNum = 1;
+				count++;
+				for (int i = 1; i < turn && count < num; i++) {
+					upNum--;
+					downNum++;
+					count++;
 
+				}
+			}
 			
-			plusNum++;
 		}
 			
-		
+			
+			turn++;
+			
+			
+		}
+		System.out.println(upNum+"/"+downNum);
 		
 		
 		
