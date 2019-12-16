@@ -32,27 +32,45 @@ public class Q2869 {
 	V : 나무의 높이 
 	A : 달팽이가 낮에 올라가는 높이 
 	B : 달팽이가 밤에 떨어지는 높이
- */
-		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		int v = sc.nextInt();
-		int day = v / (a - b) -1;
-		int distance = a * day; // 달팽이가 간 거리의 누적 
+ */ 
+		// 2 1 5
+		// 1: 2 -1 : 1
+		// 2: 3	-1 : 2
+		// 3: 4 -1 : 3
+		// 4: 5 
+		// 5 -1 : 4
 		
-		while( v > distance ) {
-			
-			distance += a; // 
-			if(distance != v ) distance -= b;
+		//10 7 54:  3 --47 : 15.xxx + 1
+		// 1: 10 -7 : 3
+		// 2: 13 -7 : 6
+		// 3: 16 -7 : 9
+		// 4: 19 -7 : 12
+		//			  15
+		//			  18
+		//			  21 24 27 30 33 36 39 42 45 48
+		// 58 : 54-7= 47
+		// 17 일 
+		Scanner sc = new Scanner(System.in);
+		long a = sc.nextInt();
+		long b = sc.nextInt();
+		long v = sc.nextInt();
+
+		long day=0;
+		
+		// 총 높이에서 만큼을 미리 빼주고, 중에 day에 +1을 우선 한다.
+		// 만약 a-b의 값이 v와 나누어떨어진다면 미리 빼둔 하루만 더하면 되고
+		// a-b의 값과 v가 나누어 떨어지지 않으면 하루를 더한 것에 하루를 더 더한다
+		// int는 나눈 나머지를 버리기 때문임 
+		day = (v-a) / (a-b);
+		if( (v-a) % (a-b) != 0 ) {
+			day+=2;
+		}else {
 			day++;
 		}
 		
+		
+		
 		System.out.println(day);
-		
-			
-	
-		
-		
 		
 	}
 
