@@ -11,7 +11,7 @@ public class Q1011 {
 		세계 최연소 ASNA 우주 비행사가 되어 새로운 세계에 발을 내려 놓는 
 		영광의 순간을 기다리고 있다.
 		
-		그가 탑승하게 될 우주선은 Alpha Centauri라는 
+		그가 탑승하게 될 우주선은 Alpha Centauri 라는 
 		새로운 인류의 보금자리를 개척하기 위한 대규모 생활 유지 시스템을 
 		탑재하고 있기 때문에, 그 크기와 질량이 엄청난 이유로 최신기술력을
 		총 동원하여 개발한 공간이동 장치를 탑재하였다. 
@@ -47,12 +47,49 @@ public class Q1011 {
 		0 3
 		1 5
 		45 50
-		예제 출력 1 
+		예제 출력 1
 		3
 		3
 		4
-		 
+		T : 테스트케이스 개수
+ 		x : 현재 위치 
+ 		y : 목표 위치 
+ 		013
  */
+		// 
+		int T = 1;
+		int x = 0;
+		int y = 3;
+		int result = x+1;	
+		int count = 1;
+
+		// 절반까지는 + 값으로
+		int w = 1; // while로 바꾸
+		for (int i = 0; result < y / 2 ; i++) {
+			if( result+i+1 < y && result < y/2) { // +1일 때  
+				
+				result += i+1;
+			}
+			else  {
+				result += i;
+			}
+
+			
+			
+		}
+		System.out.println("count="+count);
+//		for (int i = count-1; result < (y/2)*2 ; i--) {
+//			if(result + i <= y-1) {
+//			result += i;
+//			count++;}
+//		}
+		
+		
+		System.out.println(result);
+		
+		
+		
+		
 		
 		
 	}
