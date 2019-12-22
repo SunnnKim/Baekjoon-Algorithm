@@ -1,5 +1,7 @@
 package level.mathematics;
 
+import java.util.Scanner;
+
 public class Q1978 {
 
 	public static void main(String[] args) {
@@ -22,9 +24,35 @@ public class Q1978 {
 	3
  
  */
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		int N;
+		int count=0;
+		for (int i = 0; i < T; i++) {
+			N = sc.nextInt();
+			if9checkDecimal(N)
+		}
 		
 		
 		
 	}
+	
 
+
+
+	
+	public static boolean checkDecimal(int x) {
+		boolean decimal=true;
+		if(x == 2 || x == 3||x == 5||x == 7||x == 11)
+		if(x % 2 == 0) return false;
+		if(x % 3 == 0) return false;
+		if(x % 5 == 0) return false;
+		if(x % 7 == 0) return false;
+		if(x % 11 == 0) return false;
+		
+		
+		return decimal;
+	}
+	
+	
 }

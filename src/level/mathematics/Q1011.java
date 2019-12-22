@@ -95,3 +95,31 @@ public class Q1011 {
 	}
 
 }
+
+class Centauri{
+	int x;
+	int y;
+	int result=0;
+	int count;
+	
+	public Centauri(int x, int y) {
+		this.x = x;
+		this.y = y;
+		
+	}
+	
+	public int count() {
+		
+		
+		
+		
+		
+		
+		
+		
+		return result;
+	}
+	
+
+}
+
