@@ -56,11 +56,12 @@ public class Q1011 {
  		y : 목표 위치 
  		013
  */
-		// 
+	
 		int T = 1;
 		int x = 0;
 		int y = 3;
-		int result = x+1;	
+		int dist = y-x;
+		int result = 0;
 		int count = 1;
 
 		// 절반까지는 + 값으로
@@ -78,12 +79,6 @@ public class Q1011 {
 			
 		}
 		System.out.println("count="+count);
-//		for (int i = count-1; result < (y/2)*2 ; i--) {
-//			if(result + i <= y-1) {
-//			result += i;
-//			count++;}
-//		}
-		
 		
 		System.out.println(result);
 		

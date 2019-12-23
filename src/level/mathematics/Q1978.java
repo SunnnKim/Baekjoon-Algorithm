@@ -1,5 +1,6 @@
 package level.mathematics;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Q1978 {
@@ -27,12 +28,12 @@ public class Q1978 {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		int N;
-		int count=0;
+		int count = 0;
 		for (int i = 0; i < T; i++) {
 			N = sc.nextInt();
-			if9checkDecimal(N)
+			if(checkDecimal(N)) count++;
 		}
-		
+		System.out.println(count);
 		
 		
 	}
@@ -43,16 +44,52 @@ public class Q1978 {
 	
 	public static boolean checkDecimal(int x) {
 		boolean decimal=true;
-		if(x == 2 || x == 3||x == 5||x == 7||x == 11)
-		if(x % 2 == 0) return false;
-		if(x % 3 == 0) return false;
-		if(x % 5 == 0) return false;
-		if(x % 7 == 0) return false;
-		if(x % 11 == 0) return false;
 		
+		if(x < 100) {
+		if(x == 0 || x == 1) return false;
+		if(x % 2 == 0 && x != 2) return false;
+		if(x % 3 == 0 && x != 3) return false;
+		if(x % 5 == 0 && x != 5) return false;
+		if(x % 7 == 0 && x != 7) return false;
+		if(x % 11 == 0 && x != 11) return false;
+			
+		}
+		else {
+			ArrayList<Integer> dNum = getDecimal();
+			for (int i = 0; i < dNum.size(); i++) {
+				if(x % dNum.get(i) == 0) {
+					return false;
+				}
+			}
+			
+		}
 		
 		return decimal;
 	}
+
+	//  101  103    107  109 
+	// 
 	
+
+	
+	public static ArrayList<Integer> getDecimal() {
+		ArrayList<Integer> dNum = new ArrayList<Integer>();
+		for (int i = 2; i <= 100; i++) {
+			if( i==2 || i==3 || i==5|| i==7|| i==11) {
+				dNum.add(i);
+				continue;
+			}
+			if(i % 2 == 0 ) continue;
+			else if(i % 3 == 0 ) continue;
+			else if(i % 5 == 0 ) continue;
+			else if(i % 7 == 0 ) continue;
+			
+			dNum.add(i);
+		
+		}
+		
+		return dNum;
+	}
+//	
 	
 }
