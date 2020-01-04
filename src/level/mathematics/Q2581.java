@@ -1,5 +1,7 @@
 package level.mathematics;
 
+import java.util.Scanner;
+
 public class Q2581 {
 
 	public static void main(String[] args) {
@@ -36,7 +38,11 @@ public class Q2581 {
 		-1
 	 
 	 */
-		
+		Scanner sc = new Scanner(System.in);
+		int m = sc.nextInt();
+		int n = sc.nextInt();
+		int min = 0;
+		int total = 0;
 		
 		
 	}
