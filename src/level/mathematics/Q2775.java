@@ -62,7 +62,7 @@ public class Q2775 {
 			for (int j = 0; j < n[i] ; j++) {
 				if( j == 0 ) ho[w][j] = 1;
 				else {
-				ho[w][j] = ho[w-1][j] + ho[w][j-1];
+					ho[w][j] = ho[w-1][j] + ho[w][j-1];
 				}
 				
 				if( j == n[i] - 1 && w != k[i]) {

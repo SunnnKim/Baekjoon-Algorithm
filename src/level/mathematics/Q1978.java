@@ -46,12 +46,12 @@ public class Q1978 {
 		boolean decimal=true;
 		
 		if(x < 100) {
-		if(x == 0 || x == 1) return false;
-		if(x % 2 == 0 && x != 2) return false;
-		if(x % 3 == 0 && x != 3) return false;
-		if(x % 5 == 0 && x != 5) return false;
-		if(x % 7 == 0 && x != 7) return false;
-		if(x % 11 == 0 && x != 11) return false;
+			if(x == 0 || x == 1) return false;
+			if(x % 2 == 0 && x != 2) return false;
+			if(x % 3 == 0 && x != 3) return false;
+			if(x % 5 == 0 && x != 5) return false;
+			if(x % 7 == 0 && x != 7) return false;
+			if(x % 11 == 0 && x != 11) return false;
 			
 		}
 		else {
@@ -60,7 +60,7 @@ public class Q1978 {
 				if(x % dNum.get(i) == 0) {
 					return false;
 				}
-			}
+		}
 			
 		}
 		

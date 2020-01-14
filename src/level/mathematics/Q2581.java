@@ -1,5 +1,6 @@
 package level.mathematics;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Q2581 {
@@ -31,6 +32,7 @@ public class Q2581 {
 		예제 출력 1 
 		620
 		61
+		
 		예제 입력 2 
 		64
 		65
@@ -41,10 +43,58 @@ public class Q2581 {
 		Scanner sc = new Scanner(System.in);
 		int m = sc.nextInt();
 		int n = sc.nextInt();
-		int min = 0;
 		int total = 0;
+		int min = 0;
 		
+		ArrayList<Integer> list  = new ArrayList<>();
+		// 2 3 5 7 9 11
+		if(n <100) {
+			list =getDecimal1(m, n);
+			min = list.get(0);
+		}
+		else {
+			list = getDecimal1(0,100);
+			for (int i = 101; i <= n; i++) {
+				for (int j = 0; j < list.size() ; j++) {
+					if( i % list.get(i) != 0) {
+						list.add(i);
+					}
+				}
+			}
+		}
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i) < n ) {
+				list.remove(i);
+			}
+		}
+
+		for (int i = 0; i < list.size(); i++) {
+			total += list.get(i);
+			if(min < list.get(i)) {
+				min = list.get(i);
+			}
+		}
+		System.out.println(total);
+		System.out.println(min);
 		
+	}
+	public static ArrayList<Integer> getDecimal1(int m, int n) {
+		ArrayList<Integer> dNum = new ArrayList<Integer>();
+		for (int i = m; i <= n; i++) {
+			if( i==2 || i==3 || i==5|| i==7|| i==11) {
+				dNum.add(i);
+				continue;
+			}
+			if(i % 2 == 0 ) continue;
+			else if(i % 3 == 0 ) continue;
+			else if(i % 5 == 0 ) continue;
+			else if(i % 7 == 0 ) continue;
+			
+			dNum.add(i);
+		
+		}
+		
+		return dNum;
 	}
 
 }
