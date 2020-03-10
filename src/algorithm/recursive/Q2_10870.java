@@ -3,7 +3,7 @@ package algorithm.recursive;
 import java.util.Scanner;
 
 public class Q2_10870 {
-
+	
 	public static void main(String[] args) {
 	/*
 		문제
@@ -31,15 +31,28 @@ public class Q2_10870 {
 		55
 	*/
 		Scanner sc = new Scanner(System.in);
-		int f0 = 0;
-		int f1 = 1;
 		int n = sc.nextInt();
-		
-		// 0 일 때, 1 일 때
-		
-		
-		
-		
+		// 0 1 1 2 3 5 8 13 21 34 55
+		int f1 = 0;
+		int f2 = 1;
+		int fn = 0;
+		for (int i = 1; i < n; i++) {
+			fn = f1 + f2;
+			f1=f2;
+			f2=fn;
+		}
+		switch (n) {
+		case 0:
+			fn=0;
+			break;
+		case 1:
+			fn=1;
+			break;
+		}
+		System.out.println(fn);
 	}
+	
+	
 
 }
+
