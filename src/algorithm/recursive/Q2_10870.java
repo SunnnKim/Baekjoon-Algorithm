@@ -35,7 +35,7 @@ public class Q2_10870 {
 		// 0 1 1 2 3 5 8 13 21 34 55
 		int f1 = 0;
 		int f2 = 1;
-		int fn = 0;
+		int fn = 1;
 		for (int i = 1; i < n; i++) {
 			fn = f1 + f2;
 			f1=f2;

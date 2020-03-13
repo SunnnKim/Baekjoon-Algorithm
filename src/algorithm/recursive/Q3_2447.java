@@ -64,16 +64,52 @@ N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데�
 		Scanner sc = new Scanner(System.in);
 		StringBuffer bf = new StringBuffer();
 		int ip = sc.nextInt();
-		for(int i = 1; i <= ip; i++) {
-			for (int j = 1; j <= ip; j++) {
-				if(j % 3 == 2  && i % 3 == 2) {
-					bf.append(" ");
+		String container[][] = new String [ip][ip];
+		// ex : 9
+		for (int i = 0; i < container.length; i++) {
+			for (int j = 0; j < container.length; j++) {
+				if(i % 3 == 1 && j % 3 == 1){
+					container[i][j] = " ";
 				}else {
-					bf.append("*");
+					container[i][j] = "*";
 				}
 			}
-			bf.append("\n");
 		}
-		System.out.println(bf);
+		int pointx=0;
+		int pointy=0;
+		do {
+			for (int i = pointx; i < pointx+ip; i++) {
+				for (int j = pointy; j < pointy+ip ; j++) {
+					if(i%3 == 1 && j % 3 == 1) {
+						container[i][j] = " ";
+					}else {
+					//	container[i][j] = "*";
+					}
+				}
+			}
+			ip = ip/3;	
+			pointx += ip+1;
+			if(pointx>ip*3) {
+				pointx = 0;
+				//pointy = ;
+				
+			}
+				
+		}while(ip>1);
+//	}while(ip != ip * 3 );
+		
+		
+		
+		StringBuffer sf = new StringBuffer();
+		for (int i = 0; i < container.length; i++) {
+			for (int j = 0; j < container.length; j++) {
+				sf.append(container[i][j]);
+			}
+			sf.append("\n");
+		}
+		System.out.println(sf);
+		
+		
+
 	}
 }
